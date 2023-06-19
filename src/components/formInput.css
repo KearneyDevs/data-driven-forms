@@ -15,3 +15,15 @@ label {
   font-size: 12px;
   color: gray;
 }
+
+span {
+  font-size: 12px;
+  padding: 3px;
+  color: rgba(255, 0, 0, 0.432);
+  font-weight: bold;
+  display: none;
+}
+
+input:invalid ~ span {
+  display: block;
+}
