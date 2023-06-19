@@ -58,10 +58,10 @@ function App() {
     setValues({ ...values, [e.target.name]: e.target.value });
   }
 
-  console.log(values);
   return (
     <div className="app">
       <form onSubmit={handleSubmit}>
+        <h1>Register</h1>
         {inputs.map((input) => (
           <FormInput
             key={input.id}
