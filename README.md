@@ -123,7 +123,7 @@ const inputs = [
 ];
 ```
 
-This is pretty straight forward, from here would then map out our FormInput component based on the array of inputs.
+This is pretty straight forward, from here I would then map out the FormInput component based on the array of inputs.
 
 ```js
 {
@@ -136,4 +136,53 @@ This is pretty straight forward, from here would then map out our FormInput comp
     />
   ));
 }
+```
+
+Here is how the FormInput looks at the moment using the array of objects (inputs) as props.
+
+```js
+const FormInput = (props) => {
+  const { label, onChange, id, ...inputProps } = props;
+  return (
+    <div className="formInput">
+      <label>{label}</label>
+      <input {...inputProps} onChange={onChange} />
+    </div>
+  );
+};
+
+export default FormInput;
+```
+
+The component takes in four props that are destructured.
+
+- label - comes from each object key value pair of label.
+- onChange - is a function that comes from the parent component app which sets the setValues state. (More on that below)
+- id - comes from each object key value pair of id.
+- ...inputProps - is a spread of the object being passed in as a prop. This doesn't include the id or the label as these are being passed in as separate props.
+
+How the handleChange function works
+
+```js
+function handleChange(e) {
+  setValues({ ...values, [e.target.name]: e.target.value });
+}
+```
+
+This is passed in as a prop called onChange, which then runs whenever the input within the FormInput component is updated. The function takes in the event and we then set the setValues state taking in a spread of the `...values` state and then applying the typed value as the value against the key name.
+
+So for example if we type in the Username field which the `e.target.name` will be username, the value of that key will be updated to with what has been typed. So how do we know that name is username? We passed it in as part of our props from the inputs array of objects which you can see below.
+
+On the input we spread the input props and use it for the attributes of the input. For example:
+
+```html
+<div class="formInput">
+  <label>Username</label>
+  <input
+    name="username"
+    type="text"
+    placeholder="Username"
+    value="Shane Kearney"
+  />
+</div>
 ```
