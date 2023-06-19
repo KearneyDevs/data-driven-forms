@@ -1,7 +1,6 @@
 import "./formInput.css";
 
 const FormInput = (props) => {
-  console.log(props);
   const { label, onChange, id, ...inputProps } = props;
   return (
     <div className="formInput">
