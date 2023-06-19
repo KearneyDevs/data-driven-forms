@@ -9,6 +9,7 @@ function App() {
     fullname: "",
     birthday: "",
     password: "",
+    confirmPassword: "",
   });
 
   const inputs = [
