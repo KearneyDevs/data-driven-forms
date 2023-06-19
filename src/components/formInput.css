@@ -24,6 +24,11 @@ span {
   display: none;
 }
 
-input:invalid ~ span {
+input:invalid[focused="true"] {
+  border: 1px solid rgba(255, 0, 0, 0.432);
+}
+
+input:invalid[focused="true"] ~ span {
   display: block;
+  margin-bottom: 0.5rem;
 }
