@@ -8,7 +8,8 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const data = new FormData(e.target);
+    // const data = new FormData(e.target);
+    console.log(values);
   }
 
   function handleChange(e) {
@@ -19,7 +20,7 @@ function App() {
     <div className="app">
       <form onSubmit={handleSubmit}>
         <h1>Register</h1>
-        {inputs.map((input) => (
+        {inputs(values.password).map((input) => (
           <FormInput
             key={input.id}
             {...input}
