@@ -173,7 +173,7 @@ This is passed in as a prop called onChange, which then runs whenever the input 
 
 So for example if we type in the Username field which the `e.target.name` will be username, the value of that key will be updated to with what has been typed. So how do we know that name is username? We passed it in as part of our props from the inputs array of objects which you can see below.
 
-On the input we spread the input props and use it for the attributes of the input. For example:
+On the input component we spread the input props and use it for the attributes of the input. For example:
 
 ```html
 <div class="formInput">
