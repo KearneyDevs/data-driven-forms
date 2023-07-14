@@ -168,6 +168,7 @@ function handleChange(e) {
   setValues({ ...values, [e.target.name]: e.target.value });
 }
 ```
+**Note: The above needs updated to use previous state as it will rely on the previous state. This is best practice.**
 
 This is passed in as a prop called onChange, which then runs whenever the input within the FormInput component is updated. The function takes in the event and we then set the setValues state taking in a spread of the `...values` state and then applying the typed value as the value against the key name.
 
